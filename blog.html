@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Regionales Aconquija</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="icon" href="logo-2.png" type="image/x-icon">
+  <style>
+    .entrada-blog {
+      background-color: #fff2e6;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin: 1.5rem 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .entrada-blog h2 {
+      margin-bottom: 0.3rem;
+    }
+    .entrada-blog .fecha {
+      color: #c75b39;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="index.html"><img src="logo.png" alt="Logo Regionales Aconquija" class="logo" /></a>
+      <input type="text" placeholder="Buscar productos..." class="search-bar" />
+      <ul class="nav-links">
+        <li><a href="nosotros.html">Conócenos</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contacto.html">Escríbenos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="promo-banner">
+    <h1>Nuestro blog</h1>
+    <p>Historias, recetas y más sobre los sabores de Aconquija.</p>
+  </section>
+
+  <section class="entrada-blog">
+    <h2>5 formas de disfrutar una pastaflora</h2>
+    <span class="fecha">Publicado el 15 de junio de 2025</span>
+    <p>Te mostramos ideas para disfrutar tu pastaflora regional: con mate, en la merienda, en picnics, o como regalo dulce. ¡Imaginación y sabor!</p>
+  </section>
+
+  <section class="entrada-blog">
+    <h2>¿Qué hace especial a nuestros rosquetes?</h2>
+    <span class="fecha">Publicado el 2 de junio de 2025</span>
+    <p>Los rosquetes de nuestra abuela tienen una historia: masa suave, sabor anisado y el toque justo de horno de barro. Conocé su origen.</p>
+  </section>
+
+  <section class="entrada-blog">
+    <h2>Cómo conservar tus dulces artesanales</h2>
+    <span class="fecha">Publicado el 20 de mayo de 2025</span>
+    <p>Te contamos tips para mantener los productos frescos sin perder el sabor tradicional. Desde frascos hasta guardarlos en la heladera.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Regionales Aconquija - Todos los derechos reservados.</p>
+  </footer>
+
+  <button class="modo-btn" onclick="toggleModo()">🌓</button>
+  <script>
+    function toggleModo() {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('modoOscuro', document.body.classList.contains('dark-mode'));
+    }
+    window.addEventListener('DOMContentLoaded', () => {
+      if (localStorage.getItem('modoOscuro') === 'true') {
+        document.body.classList.add('dark-mode');
+      }
+    });
+  </script>
+</body>
+</html>

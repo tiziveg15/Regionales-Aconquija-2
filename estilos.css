@@ -1,0 +1,161 @@
+/* Estilo general para celulares */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fffaf0;
+  color: #3d2e26;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background: #1b1b1b;
+  color: #f2e5d7;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #c75b39;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar .logo {
+  height: 90px;
+  margin-bottom: 0.5rem;
+}
+
+.search-bar {
+  padding: 0.5rem;
+  width: 100%;
+  max-width: 400px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #f4a261;
+}
+
+.promo-banner {
+  background: linear-gradient(45deg, #f4a261, #ffe2c0);
+  text-align: center;
+  padding: 2rem 1rem;
+  animation: slideDown 1s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.productos-destacados, .todos-productos {
+  padding: 2rem 1rem;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.producto {
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.producto:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.producto img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.producto .envio {
+  color: green;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+footer {
+  background: #c75b39;
+  text-align: center;
+  color: white;
+  padding: 1rem;
+  margin-top: 3rem;
+}
+
+body.dark-mode .navbar {
+  background: #292929;
+}
+
+body.dark-mode .nav-links a:hover {
+  color: #f4a261;
+}
+
+body.dark-mode .promo-banner {
+  background: linear-gradient(45deg, #292929, #3a3a3a);
+}
+
+body.dark-mode .producto {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+body.dark-mode footer {
+  background: #121212;
+  color: #ccc;
+}
+
+.modo-btn {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background: #c75b39;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: white;
+}
+
+body.dark-mode .modo-btn {
+  background: #444;
+}

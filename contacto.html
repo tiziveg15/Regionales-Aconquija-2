@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escríbenos - Regionales Aconquija</title>
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    .formulario-contacto {
+      background-color: #fff4e6;
+      border-radius: 10px;
+      padding: 1.5rem;
+      max-width: 500px;
+      margin: 0 auto 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .formulario-contacto input,
+    .formulario-contacto textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-top: 0.2rem;
+    }
+    .formulario-contacto button {
+      background-color: #c75b39;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 5px;
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+    .contacto-extra {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .contacto-extra a {
+      display: inline-block;
+      margin: 0.5rem;
+      text-decoration: none;
+      color: #3d2e26;
+      font-weight: bold;
+    }
+    .contacto-extra img {
+      width: 90px;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="index.html"><img src="logo.png" alt="Logo Regionales Aconquija" class="logo" /></a>
+      <input type="text" placeholder="Buscar productos..." class="search-bar" />
+      <ul class="nav-links">
+        <li><a href="nosotros.html">Conócenos</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contacto.html">Escríbenos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="promo-banner">
+    <h1>¡Queremos escucharte!</h1>
+    <p>Dejanos tu consulta o pedido personalizado, y te responderemos a la brevedad.</p>
+  </section>
+
+  <section class="productos-destacados">
+    <form action="#" method="post" class="formulario-contacto">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+      <button type="submit">Enviar mensaje</button>
+    </form>
+
+    <div class="contacto-extra">
+      <p>Contáctanos por WhatsApp</p>
+      <a href="https://wa.me/5493813894540" target="_blank">
+        <img src="WhatsApp.com.png" alt="WhatsApp">
+      </a>
+      <p>O llámanos</p>
+      <p><strong>+54 9 381 389-4540</strong></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Regionales Aconquija - Todos los derechos reservados.</p>
+  </footer>
+
+  <button class="modo-btn" onclick="toggleModo()">🌓</button>
+  <script>
+    function toggleModo() {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('modoOscuro', document.body.classList.contains('dark-mode'));
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      if (localStorage.getItem('modoOscuro') === 'true') {
+        document.body.classList.add('dark-mode');
+      }
+    });
+  </script>
+</body>
+</html>

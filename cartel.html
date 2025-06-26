@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cartel Fluorescente</title>
+  <style>
+    body {
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .cartel {
+      width: 3000px;
+      overflow: hidden;
+      border: 20px solid #0ff;
+      padding: 100px;
+      background: #000;
+      box-shadow: 0 0 200px #0ff;
+    }
+
+    .texto {
+      display: inline-block;
+      white-space: nowrap;
+      color: #0ff;
+      font-size: 200px;
+      font-family: 'Arial', sans-serif;
+      text-shadow: 0 0 50px #0ff, 0 0 10px #0ff, 0 0 15px #0ff;
+      animation: mover 25s linear infinite;
+    }
+
+    @keyframes mover {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cartel">
+    <div class="texto">Ma o tata, despierteme temprano para terminar el trabajo de la tia lau</div>
+  </div>
+
+  <script>
+    let pKeyPressed = false;
+    let pTimer = null;
+
+    // Bloquear acción predeterminada de F11
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "F11") {
+        e.preventDefault(); // Evita que se active fullscreen
+      }
+
+      // Iniciar temporizador si se presiona "p"
+      if (e.key === "p" && !pKeyPressed) {
+        pKeyPressed = true;
+        pTimer = setTimeout(() => {
+          toggleFullscreen();
+        }, 7000); // 7 segundos
+      }
+    });
+
+    // Cancelar si se suelta antes de los 7 segundos
+    document.addEventListener("keyup", (e) => {
+      if (e.key === "p") {
+        pKeyPressed = false;
+        clearTimeout(pTimer);
+      }
+    });
+
+    // Función para activar o salir de pantalla completa
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+          console.log("Error al entrar en pantalla completa:", err);
+        });
+      } else {
+        document.exitFullscreen().catch(err => {
+          console.log("Error al salir de pantalla completa:", err);
+        });
+      }
+    }
+  </script>
+
+</body>
+</html>
