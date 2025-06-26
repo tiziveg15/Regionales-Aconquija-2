@@ -26,6 +26,10 @@ body.dark-mode {
 .navbar .logo {
   height: 90px;
   margin-bottom: 0.5rem;
+  position: absolute;
+  top: 10px;
+  left: 40px;
+  border-radius: 20%;
 }
 
 .search-bar {
